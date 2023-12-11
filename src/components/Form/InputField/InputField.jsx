@@ -1,10 +1,12 @@
 const InputField = ({ label, type, name, value, onChange }) => {
   return (
-    <label>
+    <label htmlFor={name}>
       {label}
-      <input type={type} name={name} value={value} onChange={onChange} />
+      <input type={type} name={name} placeholder={label} value={value} onChange={onChange} />
     </label>
+
   );
 }
+
 
 export default InputField;

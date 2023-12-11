@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import InputField from "./InputField/InputField";
 import Button from "../Button/Button";
 
@@ -29,14 +30,15 @@ const Form = () => {
     console.log(formData.password);
   }
 
+
   return (
     <form onSubmit={handleSubmit}>
-      <InputField label='First Name' type='text' name='firstName' value={formData.firstName} onChange={handleInputChange} />
+      <InputField label='First Name' place type='text' name='firstName' value={formData.firstName} onChange={handleInputChange} />
       <InputField label='Last Name' type='text' name='lastName' value={formData.lastName} onChange={handleInputChange} />
       <InputField label='Email Address' type='email' name='email' value={formData.email} onChange={handleInputChange} />
       <InputField label='Password' type='password' name='password' value={formData.password} onChange={handleInputChange} />
       <div>
-        <Button txt="Claim your free trial" />
+        <Button form normalText="Claim your free trial" />
       </div>
 
       <p>By clicking the button, you are agreeing to our Terms and Services</p>

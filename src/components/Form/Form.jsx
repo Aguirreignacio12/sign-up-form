@@ -1,7 +1,26 @@
 import { useState } from "react";
-
+import styled from "styled-components";
 import InputField from "./InputField/InputField";
 import Button from "../Button/Button";
+
+const StyledForm = styled.form`
+  background-color : #fff;
+  border-radius:.60em;
+  display:flex;
+  flex-direction:column;
+  padding: 1em 1.2em;
+  gap:1em;
+`
+const StyledParagraph = styled.p`
+color:hsl(246, 25%, 77%);
+font-size:.7rem;
+line-height:1.9em;
+padding:0 1.05em;
+`
+
+const StyledStrong = styled.strong`
+color: hsl(0, 100%, 74%);
+`
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -28,21 +47,29 @@ const Form = () => {
     console.log(formData.lastName);
     console.log(formData.email);
     console.log(formData.password);
+
+
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: ''
+    })
   }
 
 
   return (
-    <form onSubmit={handleSubmit}>
-      <InputField label='First Name' place type='text' name='firstName' value={formData.firstName} onChange={handleInputChange} />
-      <InputField label='Last Name' type='text' name='lastName' value={formData.lastName} onChange={handleInputChange} />
-      <InputField label='Email Address' type='email' name='email' value={formData.email} onChange={handleInputChange} />
-      <InputField label='Password' type='password' name='password' value={formData.password} onChange={handleInputChange} />
+    <StyledForm onSubmit={handleSubmit}>
+      <InputField placeholder='First Name' type='text' name='firstName' value={formData.firstName} onChange={handleInputChange} />
+      <InputField placeholder='Last Name' type='text' name='lastName' value={formData.lastName} onChange={handleInputChange} />
+      <InputField placeholder='Email Address' type='email' name='email' value={formData.email} onChange={handleInputChange} />
+      <InputField placeholder='Password' type='password' name='password' value={formData.password} onChange={handleInputChange} />
       <div>
-        <Button form normalText="Claim your free trial" />
+        <Button $form boldText="Claim your free trial" />
       </div>
 
-      <p>By clicking the button, you are agreeing to our Terms and Services</p>
-    </form>
+      <StyledParagraph>By clicking the button, you are agreeing to our <StyledStrong>Terms and Services</StyledStrong></StyledParagraph>
+    </StyledForm>
   );
 }
 

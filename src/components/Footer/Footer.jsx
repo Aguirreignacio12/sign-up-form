@@ -13,6 +13,7 @@ text-decoration:none;
 
 const StyledParagraph = styled.p`
 color:hsl(250,50%,100%);
+text-align:center;
 `
 
 
@@ -23,7 +24,7 @@ const Footer = () => {
     <StyledFooter>
       <StyledParagraph className="attribution">
         Challenge by <StyledLink href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</StyledLink>.
-        Coded by <StyledLink href="#">Your Name Here</StyledLink>.
+        Coded by <StyledLink href="#">Ignacio Aguirre</StyledLink>.
       </StyledParagraph>
     </StyledFooter>
   </>

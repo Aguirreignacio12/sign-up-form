@@ -11,8 +11,7 @@ const StyledApp = styled.div`
   margin: 0 auto;
   padding: 2rem;
   gap:1.5em;
-  text-align: center;
-  display:grid;
+  display:grid; 
   grid-template-columns:repeat(4,1fr);
   grid-template-rows: auto;
   grid-template-areas:
@@ -20,12 +19,33 @@ const StyledApp = styled.div`
     "buttonInfo buttonInfo buttonInfo buttonInfo"
     "form form form form"
     "footer footer footer footer";
+@media screen and (min-width: 768px){
+  gap:2.5em;
+}
+@media screen and (min-width: 1440px) {
+  grid-template-rows: repeat(12 ,1fr);
+  grid-template-areas:
+    "info info buttonInfo buttonInfo"
+    "info info buttonInfo buttonInfo"
+    "info info buttonInfo buttonInfo"
+    "info info form form"
+    "info info form form"
+    "info info form form"
+    "info info form form"
+    "info info form form"
+    "info info form form"
+    "info info form form"
+    "info info form form"
+    "footer footer footer footer";
+    
+}
 `
 
 const StyledContainer = styled.div`
+grid-area: ${({ $gridArea }) => $gridArea || 'auto'};
+align-self:${({ $alignSelf }) => $alignSelf || 'center'};
+`
 
-
-grid-area: ${({ $gridArea }) => $gridArea || 'auto'}`
 const App = () => {
   return (
     <StyledApp>
@@ -33,15 +53,15 @@ const App = () => {
         <Info />
       </StyledContainer>
 
-      <StyledContainer $gridArea='buttonInfo'>
+      <StyledContainer $gridArea='buttonInfo' $alignSelf='end'>
         <Button boldText='Try it free 7 days' normalText=' then $20/mo. thereafter' />
       </StyledContainer>
 
-      <StyledContainer $gridArea='form'>
+      <StyledContainer $gridArea='form' $alignSelf='start' >
         <Form />
       </StyledContainer>
 
-      <StyledContainer $gridArea='footer'>
+      <StyledContainer $gridArea='footer' $alignSelf='end'>
         <Footer />
       </StyledContainer>
     </StyledApp>

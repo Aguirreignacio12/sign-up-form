@@ -9,11 +9,19 @@ const StyledForm = styled.form`
   display:flex;
   flex-direction:column;
   padding: 1em 1.2em;
+  position:relative;
   gap:1em;
+  box-shadow: 0px 8px 0px rgba(0, 0, 0, 15%);
+
+@media screen and (min-width:768px){
+  padding:3em 2.5em;
+  gap:1.5em;
+}
 `
 const StyledParagraph = styled.p`
 color:hsl(246, 25%, 77%);
 font-size:.7rem;
+text-align:center;
 line-height:1.9em;
 padding:0 1.05em;
 `

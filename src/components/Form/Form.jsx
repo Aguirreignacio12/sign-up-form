@@ -9,6 +9,7 @@ const StyledForm = styled.form`
   display:flex;
   flex-direction:column;
   padding: 1em 1.2em;
+  position:relative;
   gap:1em;
   box-shadow: 0px 8px 0px rgba(0, 0, 0, 15%);
 
@@ -63,7 +64,6 @@ const Form = () => {
       password: ''
     })
   }
-
 
 
   return (

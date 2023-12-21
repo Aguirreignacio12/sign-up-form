@@ -6,7 +6,6 @@
 
 :root {
   font-family: 'Poppins', sans-serif;
-  font-family: 'Poppins', sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
@@ -27,7 +26,3 @@ body {
   background: url(./assets/images/bg-intro-mobile.png), hsl(0, 100%, 74%);
 }
 
-
-  font-size: 16px;
-  background: url(./assets/images/bg-intro-mobile.png), hsl(0, 100%, 74%);
-}

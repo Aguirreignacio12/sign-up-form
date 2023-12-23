@@ -3,6 +3,7 @@ import Button from './components/Button/Button'
 import Form from './components/Form/Form'
 import Info from './components/Info/Info'
 import Footer from './components/Footer/Footer'
+import GlobalStyle from './styles/GlobalStyles'
 
 const StyledApp = styled.div`
   width:100%;
@@ -49,6 +50,7 @@ align-self:${({ $alignSelf }) => $alignSelf || 'center'};
 const App = () => {
   return (
     <StyledApp>
+      <GlobalStyle />
       <StyledContainer $gridArea='info'>
         <Info />
       </StyledContainer>

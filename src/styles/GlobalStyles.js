@@ -1,3 +1,10 @@
+import { createGlobalStyle } from "styled-components";
+import { theme } from "./theme";
+
+const pathBackground = '../assets/images/bg-intro-mobile.png';
+
+
+const GlobalStyle = createGlobalStyle`
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,7 +15,7 @@
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: ${theme.colors.text};
   background-color: #242424;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -23,6 +30,10 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-size:16px;
-  background: url(./assets/images/bg-intro-mobile.png), hsl(0, 100%, 74%);
+  background: url(${pathBackground}), hsl(0,100%,74%);
 }
 
+
+`
+
+export default GlobalStyle;

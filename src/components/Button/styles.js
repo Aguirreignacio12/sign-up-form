@@ -14,8 +14,12 @@ const StyledButton = styled.button`
   width:100%;
   background-color:${theme.colors.buttonSecondary};
   box-shadow: ${theme.shadows.medium} ${theme.colors.shadow};
-  letter-spacing: .02em; 
+  letter-spacing: .02em;
+  transition:${theme.transition.regular}; 
 
+&:hover{
+background-color:${theme.colors.hover.buttonSecondary};
+}
   ${props =>
     props.$form &&
     css`
@@ -23,6 +27,11 @@ const StyledButton = styled.button`
       box-shadow: ${theme.shadows.regular} ${theme.colors.shadowButtonPrimary};
       letter-spacing: 0.02em; 
       text-transform: uppercase;
+    
+    &:hover{
+background-color:${theme.colors.hover.buttonPrimary};
+      box-shadow:${theme.shadows.regular} ${theme.colors.hover.shadowButtonPrimary};
+    }
     `};
 `;
 

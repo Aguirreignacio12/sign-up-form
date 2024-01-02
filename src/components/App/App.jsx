@@ -1,9 +1,10 @@
 import styled from 'styled-components'
-import Button from './components/Button/Button'
-import Form from './components/Form/Form'
-import Info from './components/Info/Info'
-import Footer from './components/Footer/Footer'
-import GlobalStyle from './styles/GlobalStyles'
+import Button from '../Button/Button'
+import Form from '../Form/Form'
+import Info from '../Info/Info'
+import Footer from '../Footer/Footer'
+import GlobalStyle from '../../styles/GlobalStyles'
+import { theme } from '../../styles/theme'
 
 const StyledApp = styled.div`
   width:100%;
@@ -20,10 +21,10 @@ const StyledApp = styled.div`
     "buttonInfo buttonInfo buttonInfo buttonInfo"
     "form form form form"
     "footer footer footer footer";
-@media screen and (min-width: 768px){
+@media ${theme.mediaQueries.tablet}{
   gap:2.5em;
 }
-@media screen and (min-width: 1440px) {
+@media ${theme.mediaQueries.desktop} {
   grid-template-rows: repeat(12 ,1fr);
   grid-template-areas:
     "info info buttonInfo buttonInfo"

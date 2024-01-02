@@ -1,51 +1,26 @@
-import { useState } from "react";
-import { StyledForm, StyledParagraph, StyledStrong } from "./styles";
+import { useForm } from "../../hooks/useForm";
+import validationsForm from './validationsForm'
 import InputField from "./InputField/InputField";
 import Button from "../Button/Button";
+import { StyledForm, StyledParagraph, StyledStrong } from "./styles";
 
+const initialForm = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  password: ''
+};
 
 const Form = () => {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: ''
-  });
-
-  const handleInputChange = ({ target: { name, value } }) => {
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  }
-
-  const handleSubmit = (evt) => {
-    evt.preventDefault()
-    console.log('Objeto:');
-    console.log(formData);
-
-    console.log('propiedades por separado:');
-    console.log(formData.firstName);
-    console.log(formData.lastName);
-    console.log(formData.email);
-    console.log(formData.password);
-
-
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      password: ''
-    })
-  }
-
+  const { form, errors, handleChange, handleBlur, handleSubmit } = useForm(initialForm, validationsForm);
 
   return (
     <StyledForm onSubmit={handleSubmit}>
-      <InputField placeholder='First Name' type='text' name='firstName' value={formData.firstName} onChange={handleInputChange} />
-      <InputField placeholder='Last Name' type='text' name='lastName' value={formData.lastName} onChange={handleInputChange} />
-      <InputField placeholder='Email Address' type='email' name='email' value={formData.email} onChange={handleInputChange} />
-      <InputField placeholder='Password' type='password' name='password' value={formData.password} onChange={handleInputChange} />
+      <InputField type='text' name='firstName' value={form.firstName} errors={errors.firstName} placeholder='First Name' onChange={handleChange} onFocus={handleBlur} />
+      <InputField type='text' name='lastName' value={form.lastName} errors={errors.lastName} placeholder='Last Name' onChange={handleChange} onBlur={handleBlur} />
+      <InputField type='email' name='email' value={form.email} errors={errors.email} placeholder='Email Address' onChange={handleChange} onBlur={handleBlur} />
+      <InputField type='password' name='password' value={form.password} errors={errors.password} placeholder='Password' onChange={handleChange} onBlur={handleBlur} />
+
       <div>
         <Button $form boldText="Claim your free trial" />
       </div>

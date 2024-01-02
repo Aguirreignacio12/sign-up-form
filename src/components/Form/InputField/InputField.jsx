@@ -1,10 +1,11 @@
-import StyledInput from "./styles";
+import { StyledContainer, StyledInput, StyledErrorMessage } from "./styles";
 
-const InputField = ({ type, name, placeholder, value, onChange }) => {
+const InputField = ({ type, id, name, placeholder, value, onChange, onBlur, errors }) => {
   return (
-    <div>
-      <StyledInput type={type} name={name} placeholder={placeholder} value={value} onChange={onChange} />
-    </div>
+    <StyledContainer>
+      <StyledInput type={type} id={id} name={name} placeholder={placeholder} value={value} onChange={onChange} onBlur={onBlur} />
+      {errors && <StyledErrorMessage>{errors}</StyledErrorMessage>}
+    </StyledContainer>
   );
 }
 

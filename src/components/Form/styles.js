@@ -11,7 +11,7 @@ export const StyledForm = styled.form`
   gap:1em;
   box-shadow: ${theme.shadows.medium} ${theme.colors.shadow};
 
-@media screen and (min-width:768px){
+@media ${theme.mediaQueries.tablet}{
   padding:3em 2.5em;
   gap:1.5em;
 }
@@ -19,7 +19,7 @@ export const StyledForm = styled.form`
 
 export const StyledParagraph = styled.p`
 color:${theme.colors.grayishBlue};
-font-size:.7rem;
+font-size:${theme.fontSize.small};
 text-align:center;
 line-height:1.9em;
 padding:0 1.05em;

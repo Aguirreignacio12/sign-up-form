@@ -9,6 +9,7 @@ export const StyledFooter = styled.footer`
 
 export const StyledLink = styled.a`
 color:${theme.colors.link};
+padding:0;
 text-decoration:none;
 `
 

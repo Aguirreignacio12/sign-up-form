@@ -1,8 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import { theme } from "./theme";
-
-const pathBackground = '../assets/images/bg-intro-mobile.png';
-
+import backgroundMobile from "../assets/images/bg-intro-mobile.png";
+import backgroundDesktop from "../assets/images/bg-intro-desktop.png";
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -29,11 +28,14 @@ body {
   font-family: 'Poppins', sans-serif;
   min-width: 320px;
   min-height: 100vh;
-  font-size:16px;
-  background: url(${pathBackground}), hsl(0,100%,74%);
+  font-size:${theme.fontSize.default};
+  background: url(${backgroundMobile}), hsl(0,100%,74%);
+  color:${theme.colors.text};
 }
 
-
+@media ${theme.mediaQueries.desktop}{
+  background: url(${backgroundDesktop}), hsl(0,100%,74%);
+}
 `
 
 export default GlobalStyle;

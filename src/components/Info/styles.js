@@ -10,13 +10,13 @@ export const StyledTitle = styled.h1`
 font-size:${theme.fontSize.medium};
 padding: 0 0 .45em 0;
 
-@media screen and (min-width:768px){
+@media ${theme.mediaQueries.tablet}{
 font-size:${theme.fontSize.large};
 }
 `
 
 export const StyledParagraph = styled.p`
-@media screen and (min-width:768px){
+@media ${theme.mediaQueries.tablet}{
   font-size:${theme.fontSize.regular};
 }
 

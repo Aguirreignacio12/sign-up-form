@@ -1,6 +1,5 @@
 import styled, { keyframes } from "styled-components";
 import { theme } from "../../../styles/theme";
-import { animation } from "react-reveal/globals";
 
 export const StyledContainer = styled.div`
 width:100%;
@@ -8,7 +7,8 @@ display:flex;
 flex-direction:column;
 gap:.5em;
 `
-const animationForm = keyframes`
+
+const animationOpacity = keyframes`
 0%{opacity:0; margin-top:-.5em}
 25%{opacity:.25; margin-top:-.4em}
 50%{opacity:.50; margin-top:-.3em}
@@ -33,8 +33,8 @@ border: 2px solid ${theme.colors.grayishBlue};
 `
 
 export const StyledErrorMessage = styled.span`
+animation:${animationOpacity} .5s ease-out;
 align-self:end;
 color:${theme.colors.error};
 font-size:${theme.fontSize.small};
-animation:${animationForm} .5s ease;
 `
